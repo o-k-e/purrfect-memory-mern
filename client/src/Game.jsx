@@ -43,10 +43,10 @@ function Game (){
 
     const [isSelected, setIsSelected] = useState(false);
 
-    function handleClick(cat){
+   /*  function handleClick(cat){
         if()
     }
-
+ */
     /* const handleClick = (cat) => {
        toggleShow(cat)
     }
@@ -92,7 +92,7 @@ function Game (){
                     width={200}
                     height={250}
                     backOfImage={imageUrl}
-                    onClick={handleClick}
+                    /* onClick={handleClick} */
                     back={isSelected ? "hide-back" : "show-back"}
                     front={isSelected ? "show-front" : "hide-front"}
                 />
