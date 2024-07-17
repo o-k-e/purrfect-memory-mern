@@ -1,0 +1,24 @@
+.container{
+    position: relative;
+    flex-flow: row wrap;
+    display: flex;
+    justify-content: space-around;
+    gap: 50px;
+    padding: 50px;
+    float: left;
+}
+
+.card{
+    position: absolute;
+    display: inline;
+}
+
+.hide-back{
+    display: none
+}
+
+.hide-front{
+    display: none
+}
+
+
