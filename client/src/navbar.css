@@ -40,7 +40,7 @@
 }
 
 .navbar-header {
-    background-color: cornsilk;
+    background-color: #f7cbcb54;
     position: relative;
     top: 0px;
     display: flex;
@@ -55,4 +55,29 @@
     border-bottom-width: 1px;
     border-color: rgb(107 114 128);
     padding: 2rem;
+    box-sizing: border-box;
+}
+
+.navigations button {
+    background-color: #F7CBCB;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.navigations button:hover {
+    background-color: #fab1b1;
+}
+
+.buttons {
+    display: flex;
+    gap: 10px;
 }
