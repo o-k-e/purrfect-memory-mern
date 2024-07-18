@@ -1,11 +1,23 @@
 .container{
-    position: relative;
+    /* position: relative;
     flex-flow: row wrap;
     display: flex;
     justify-content: space-around;
     gap: 50px;
     padding: 50px;
-    float: left;
+    float: left; */
+    display: flex; 
+    flex-direction: column; 
+}
+
+.game{
+    display: grid; 
+    margin: auto; 
+    margin-top: 3rem; 
+    grid-template-columns: repeat(4, 9rem); 
+    place-items: center; 
+    row-gap: 2rem; 
+    column-gap: 10rem;
 }
 
 .card{
@@ -14,8 +26,28 @@
 }
 
 
-.selected .back{
-    display: none
+.card .front { 
+    position: absolute; 
+    transform: rotateY(90deg); 
+    transition: all ease-in 0.25s; 
+  
+} 
+  
+.selected .front { 
+    transform: rotateY(0deg); 
+    transition-delay: 0.25s; 
+} 
+  
+.card .back { 
+    transition: all ease-in 0.25s; 
+    transition-delay: 0.25s; 
+} 
+  
+.selected .back { 
+    transform: rotateY(90deg); 
+    transition-delay: 0s; 
 }
 
-
+h1{
+    position: absolute;
+}

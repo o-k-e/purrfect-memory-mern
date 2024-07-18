@@ -2,6 +2,8 @@ import { useState, useEffect } from "react"
 import './Game.css'
 import Card from "./components/Card.jsx"
 import Navbar from "./components/Navbar.jsx"
+import meows from "./components/audio.js"
+
 
 function Game (){
 
@@ -44,6 +46,7 @@ function Game (){
     }, [])
  
     function handleClick(cat){
+        playRandomMeow()
         if(firstCard !== null){
            setSecondCard(cat);
         } else {
@@ -72,6 +75,13 @@ function Game (){
 
     }
 
+    function playRandomMeow() {
+        const randomNum = Math.floor(Math.random() * (meows.length - 0));
+        const randomMeow = meows[randomNum];
+        new Audio(randomMeow).play();
+        console.log(randomMeow)
+      }
+
     useEffect(()=>{
         function checkIfMatch(){
             setTimeout(() => {
@@ -95,7 +105,10 @@ function Game (){
         <div className="game">
 
         { winner? 
-        "Congratulations, you matched all the kitties!":
+        <h1>
+            Congratulations, you matched all the kitties!
+        </h1>
+        :
         cats ? 
             cats.map((cat) => {
                 return <Card
