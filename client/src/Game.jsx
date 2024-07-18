@@ -79,7 +79,6 @@ function Game (){
         const randomNum = Math.floor(Math.random() * (meows.length - 0));
         const randomMeow = meows[randomNum];
         new Audio(randomMeow).play();
-        console.log(randomMeow)
       }
 
     useEffect(()=>{
@@ -105,7 +104,7 @@ function Game (){
         <div className="game">
 
         { winner? 
-        <h1>
+        <h1 className="winner-message">
             Congratulations, you matched all the kitties!
         </h1>
         :

@@ -48,6 +48,6 @@
     transition-delay: 0s; 
 }
 
-h1{
+.winner-message {
     position: absolute;
 }

@@ -1,11 +1,11 @@
 import { Link } from 'react-router-dom'
+
 import meows from './audio';
 
 function playRandomMeow() {
   const randomNum = Math.floor(Math.random() * (meows.length - 0));
   const randomMeow = meows[randomNum];
   new Audio(randomMeow).play();
-  console.log(randomMeow)
 }
 
 function Navlinks() {
