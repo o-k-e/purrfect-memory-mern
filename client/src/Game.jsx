@@ -1,6 +1,7 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect } from "react"
 import './Game.css'
-import Card from "./components/Card.jsx";
+import Card from "./components/Card.jsx"
+import Navbar from "./components/Navbar.jsx"
 
 function Game (){
 
@@ -9,6 +10,8 @@ function Game (){
     const [cats,setCats] = useState(null);
     const [firstCard, setFirstCard] = useState(null);
     const [secondCard, setSecondCard] = useState(null);
+    const [stopFlip, setStopFlip] = useState(false);
+    const [winner, setWinner] = useState(false)
 
     function shuffleDeck(array){
         for(let i = array.length - 1; i > 0; i--){
@@ -19,8 +22,8 @@ function Game (){
     
     function addID(array){
         let catArray = []
-        for (let i = 0; i < array.length-1; i++) {
-            let object = {id: i, img: array[i]}
+        for (let i = 0; i < array.length; i++) {
+            let object = {id: i, img: array[i], matched: false}
             catArray.push(object);
         }
         return catArray
@@ -39,52 +42,61 @@ function Game (){
         }
         fetchData();
     }, [])
-
-
-    const [isSelected, setIsSelected] = useState(false);
-
-   /*  function handleClick(cat){
-        if()
-    }
- */
-    /* const handleClick = (cat) => {
-       toggleShow(cat)
-    }
-
-    const toggleShow = async (cat) => {
-        let allSelected = await document.querySelectorAll('.hide-back');
-        let counter = allSelected.length;
-        
-        if(counter <= 1 && isSelected === false){
-           await setIsSelected(true);
-          
+ 
+    function handleClick(cat){
+        if(firstCard !== null){
+           setSecondCard(cat);
+        } else {
+            setFirstCard(cat);
         }
-        console.log(allSelected)
-        if(counter === 1){
-          
-            let shownCats = document.querySelectorAll('.show-front')
-            console.log(shownCats)
+        
+    }
+    
+    function removeSelection(){
+        setFirstCard(null);
+        setSecondCard(null);
+        setStopFlip(false);
+    }
+
+    function checkIfOver(){
+        let counter = 0;
+        for(let cat of cats){
+            if(cat.matched === true){
+                counter++
+                if (counter === 12){
+                    setWinner(true)
+                }
+            } 
+        }
+
+
+    }
+
+    useEffect(()=>{
+        function checkIfMatch(){
             setTimeout(() => {
-                checkIfMatch(shownCats);
+                if (firstCard && secondCard){
+                    setStopFlip(true);
+                    if(firstCard.img === secondCard.img){
+                        firstCard.matched = true;
+                        secondCard.matched = true;
+                    }
+                    removeSelection()
+                    checkIfOver()
+                }
             }, 1000)  
         }
-        
-    }
-
-    const checkIfMatch = async (array) => {
-        if (array[0].src === array[1].src){
-            const container1 = array[0].parentElement.parentElement;
-            const container2 = array[1].parentElement.parentElement
-            container1.remove()
-            container2.remove()
-        } else {
-            setIsSelected(false)
-        }
-    } */
+    checkIfMatch();
+    }, [firstCard, secondCard])
 
     return(
+        <div>
+            <Navbar/>
         <div className="game">
-        {cats ? 
+
+        { winner? 
+        "Congratulations, you matched all the kitties!":
+        cats ? 
             cats.map((cat) => {
                 return <Card
                     key={cat.id}
@@ -92,13 +104,18 @@ function Game (){
                     width={200}
                     height={250}
                     backOfImage={imageUrl}
-                    /* onClick={handleClick} */
-                    back={isSelected ? "hide-back" : "show-back"}
-                    front={isSelected ? "show-front" : "hide-front"}
+                    handleClick={handleClick}
+                    selected={
+                        cat === firstCard ||
+                        cat === secondCard ||
+                        cat.matched === true
+                    }
+                    stopFlip={stopFlip}
                 />
             }) : "Loading..."
         }
 
+        </div>
         </div>
     )
 }
