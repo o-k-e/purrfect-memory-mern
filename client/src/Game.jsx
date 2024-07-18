@@ -20,8 +20,8 @@ function Game (){
     
     function addID(array){
         let catArray = []
-        for (let i = 0; i < array.length-1; i++) {
-            let object = {id: i, img: array[i]}
+        for (let i = 0; i < array.length; i++) {
+            let object = {id: i, img: array[i], matched: false}
             catArray.push(object);
         }
         return catArray
@@ -64,7 +64,8 @@ function Game (){
                 if (firstCard && secondCard){
                     setStopFlip(true);
                     if(firstCard.img === secondCard.img){
-                        console.log('yey');
+                        firstCard.matched = true;
+                        secondCard.matched = true;
                     }
                     removeSelection()
                 }
@@ -122,7 +123,8 @@ function Game (){
                     handleClick={handleClick}
                     selected={
                         cat === firstCard ||
-                        cat === secondCard
+                        cat === secondCard ||
+                        cat.matched === true
                     }
                     stopFlip={stopFlip}
                 />
