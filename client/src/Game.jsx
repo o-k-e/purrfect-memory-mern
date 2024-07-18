@@ -9,6 +9,7 @@ function Game (){
     const [cats,setCats] = useState(null);
     const [firstCard, setFirstCard] = useState(null);
     const [secondCard, setSecondCard] = useState(null);
+    const [stopFlip, setStopFlip] = useState(false);
 
     function shuffleDeck(array){
         for(let i = array.length - 1; i > 0; i--){
@@ -41,12 +42,38 @@ function Game (){
     }, [])
 
 
-    const [isSelected, setIsSelected] = useState(false);
-
-   /*  function handleClick(cat){
-        if()
+    
+    function handleClick(cat){
+        if(firstCard !== null){
+           setSecondCard(cat);
+        } else {
+            setFirstCard(cat);
+        }
+        
     }
- */
+    
+    function removeSelection(){
+        setFirstCard(null);
+        setSecondCard(null);
+        setStopFlip(false);
+    }
+
+    useEffect(()=>{
+        function checkIfMatch(){
+            setTimeout(() => {
+                if (firstCard && secondCard){
+                    setStopFlip(true);
+                    if(firstCard.img === secondCard.img){
+                        console.log('yey');
+                    }
+                    removeSelection()
+                }
+            }, 1000)  
+        }
+    checkIfMatch();
+    }, [firstCard, secondCard])
+
+
     /* const handleClick = (cat) => {
        toggleShow(cat)
     }
@@ -92,9 +119,12 @@ function Game (){
                     width={200}
                     height={250}
                     backOfImage={imageUrl}
-                    /* onClick={handleClick} */
-                    back={isSelected ? "hide-back" : "show-back"}
-                    front={isSelected ? "show-front" : "hide-front"}
+                    handleClick={handleClick}
+                    selected={
+                        cat === firstCard ||
+                        cat === secondCard
+                    }
+                    stopFlip={stopFlip}
                 />
             }) : "Loading..."
         }

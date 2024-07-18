@@ -13,11 +13,8 @@
     display: inline;
 }
 
-.hide-back{
-    display: none
-}
 
-.hide-front{
+.selected .back{
     display: none
 }
 
