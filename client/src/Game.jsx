@@ -3,6 +3,7 @@ import './Game.css'
 import Card from "./components/Card.jsx"
 import Navbar from "./components/Navbar.jsx"
 import meows from "./components/audio.js"
+import purr from "./audio/catpurr.mp3"
 
 
 function Game (){
@@ -81,6 +82,10 @@ function Game (){
         new Audio(randomMeow).play();
       }
 
+    function playPurr() {
+        new Audio(purr).play();
+    }
+
     useEffect(()=>{
         function checkIfMatch(){
             setTimeout(() => {
@@ -103,9 +108,10 @@ function Game (){
             <Navbar/>
         <div className="game">
 
-        { winner? 
+        { winner?
         <h1 className="winner-message">
             Congratulations, you matched all the kitties!
+            {playPurr()}
         </h1>
         :
         cats ? 
