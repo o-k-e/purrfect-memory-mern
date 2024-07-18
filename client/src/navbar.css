@@ -41,7 +41,7 @@
 
 .navbar-header {
     background-color: cornsilk;
-    position: sticky;
+    position: relative;
     top: 0px;
     display: flex;
     flex-wrap: wrap;
