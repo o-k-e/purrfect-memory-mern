@@ -24,7 +24,8 @@ function UserProfile() {
 	}
 
 	async function handleDeleteAccount(id) {
-		console.log('Deleting user: ', id);
+		/* console.log('Deleting user: ', id); */
+		alert(`Deleting your account... We are sorry to see you go, ${user.name}`)
 
 		const options = {
 			method: 'DELETE',

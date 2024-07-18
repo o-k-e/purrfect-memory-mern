@@ -22,3 +22,11 @@ p {
 span {
   color: #e78c41;
 }
+
+.welcome {
+  position: absolute;
+}
+
+* {
+  box-sizing: border-box;
+}
