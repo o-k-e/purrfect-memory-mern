@@ -27,6 +27,6 @@ span {
   position: absolute;
 } */
 
-* {
+.navbar-header {
   box-sizing: border-box;
 }
