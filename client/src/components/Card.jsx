@@ -2,8 +2,6 @@
 
 function Card({cat, width, backOfImage, height, handleClick, selected, stopFlip}){
 
-   
-
     return(
         <div className="container" style={{width: `${width}px`, height: `${height}px`}} > 
         <div className={selected ? "selected" : ""}>

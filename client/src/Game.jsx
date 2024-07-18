@@ -1,6 +1,7 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect } from "react"
 import './Game.css'
-import Card from "./components/Card.jsx";
+import Card from "./components/Card.jsx"
+import Navbar from "./components/Navbar.jsx"
 
 function Game (){
 
@@ -10,6 +11,7 @@ function Game (){
     const [firstCard, setFirstCard] = useState(null);
     const [secondCard, setSecondCard] = useState(null);
     const [stopFlip, setStopFlip] = useState(false);
+    const [winner, setWinner] = useState(false)
 
     function shuffleDeck(array){
         for(let i = array.length - 1; i > 0; i--){
@@ -40,9 +42,7 @@ function Game (){
         }
         fetchData();
     }, [])
-
-
-    
+ 
     function handleClick(cat){
         if(firstCard !== null){
            setSecondCard(cat);
@@ -58,6 +58,20 @@ function Game (){
         setStopFlip(false);
     }
 
+    function checkIfOver(){
+        let counter = 0;
+        for(let cat of cats){
+            if(cat.matched === true){
+                counter++
+                if (counter === 12){
+                    setWinner(true)
+                }
+            } 
+        }
+
+
+    }
+
     useEffect(()=>{
         function checkIfMatch(){
             setTimeout(() => {
@@ -68,51 +82,21 @@ function Game (){
                         secondCard.matched = true;
                     }
                     removeSelection()
+                    checkIfOver()
                 }
             }, 1000)  
         }
     checkIfMatch();
     }, [firstCard, secondCard])
 
-
-    /* const handleClick = (cat) => {
-       toggleShow(cat)
-    }
-
-    const toggleShow = async (cat) => {
-        let allSelected = await document.querySelectorAll('.hide-back');
-        let counter = allSelected.length;
-        
-        if(counter <= 1 && isSelected === false){
-           await setIsSelected(true);
-          
-        }
-        console.log(allSelected)
-        if(counter === 1){
-          
-            let shownCats = document.querySelectorAll('.show-front')
-            console.log(shownCats)
-            setTimeout(() => {
-                checkIfMatch(shownCats);
-            }, 1000)  
-        }
-        
-    }
-
-    const checkIfMatch = async (array) => {
-        if (array[0].src === array[1].src){
-            const container1 = array[0].parentElement.parentElement;
-            const container2 = array[1].parentElement.parentElement
-            container1.remove()
-            container2.remove()
-        } else {
-            setIsSelected(false)
-        }
-    } */
-
     return(
+        <div>
+            <Navbar/>
         <div className="game">
-        {cats ? 
+
+        { winner? 
+        "Congratulations, you matched all the kitties!":
+        cats ? 
             cats.map((cat) => {
                 return <Card
                     key={cat.id}
@@ -131,6 +115,7 @@ function Game (){
             }) : "Loading..."
         }
 
+        </div>
         </div>
     )
 }
