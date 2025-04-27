@@ -13,7 +13,7 @@ function Navlinks() {
 		<div className="flex items-center gap-4">
 			<button
 				onClick={playRandomMeow}
-				className="bg-pink-200 text-gray-700 px-4 py-2 rounded hover:bg-pink-300 transition-colors"
+				className="text-gray-700 px-4 py-2 rounded hover:bg-pink-300 transition-colors"
 				style={{ backgroundColor: '#F0CDCC' }}
 			>
 				Meow
