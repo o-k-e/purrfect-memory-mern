@@ -17,8 +17,6 @@ function Scoreboard() {
 		getUsersSortedByScore();
 	}, []);
 
-	console.log(users);
-
 	if (!users) {
 		return (
 			<div className="flex justify-center items-center h-screen">Loading</div>

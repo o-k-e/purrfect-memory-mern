@@ -22,7 +22,6 @@ function Register() {
 		fetch('/api/users', options)
 			.then((response) => response.json())
 			.then((user) => {
-				console.log(user);
 				localStorage.setItem('user', JSON.stringify(user));
 				navigate('/login');
 			})

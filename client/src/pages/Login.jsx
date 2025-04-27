@@ -27,18 +27,18 @@ function Login() {
 		fetch('/api/user', options)
 			.then((response) => response.json())
 			.then((result) => {
-
 				if (result.success) {
-					console.log('Result on frontend: ', result.user);
 					localStorage.setItem('user', JSON.stringify(result.user));
 					navigate('/game');
 				} else {
-					console.log('Login failed:', result.message);
 					alert('Not a registered user. Please register.');
 					navigate('/register');
 				}
 			})
-			.catch((error) => console.log('Error:', error));
+			.catch((error) => {
+				console.error('Error:', error);
+				alert('Something went wrong during login. Please try again later.');
+			});
 	}
 
 	return (
