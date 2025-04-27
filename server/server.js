@@ -14,8 +14,6 @@ async function main() {
 
 	// ADD NEW USER
 	app.post('/api/users', async (req, res) => {
-		console.log('POST /api/users to add new user');
-		console.log('Request body: ', req.body);
 
 		try {
 			const newUser = await User.create({
@@ -24,7 +22,6 @@ async function main() {
 				score: 0,
 				createdAt: Date.now(),
 			});
-			console.log('New user: ', newUser);
 			res.json(newUser);
 		} catch (error) {
 			console.error(error);
@@ -57,8 +54,6 @@ async function main() {
 
 	//FIND LOGGED IN USER
 	app.post('/api/user', async (req, res) => {
-		console.log('POST /api/user check if user registered');
-		console.log('Request body: ', req.body);
 
 		try {
 			const user = await User.findOne({
@@ -66,7 +61,6 @@ async function main() {
 				password: req.body.password,
 			});
 			if (user) {
-				console.log('Already registered: ', user.name);
 				res.json({ success: true, user: user });
 			} else {
 				res.json({ success: false, message: 'User not found.' });
@@ -79,12 +73,9 @@ async function main() {
 
 	//DELETE USER ACCOUNT
 	app.delete(`/api/user/:id`, async (req, res) => {
-		console.log('DELETE /api/user/:id');
-		console.log('Request params:', req.params);
 
 		try {
 			const result = await User.deleteOne({ _id: req.params.id });
-			console.log('Delete result: ', result);
 			if (result.deletedCount === 1) {
 				res.json({ success: true, message: 'User deleted successfully' });
 			} else {
@@ -99,9 +90,6 @@ async function main() {
 
     //UPDATE USER 
 	app.patch('/api/user/:id', async (req, res) => {
-		console.log('PATCH /api/user/:id ');
-		console.log('Request params:', req.params);
-		console.log('Request body:', req.body);
 
         try {
             const updateUser = await User.findById(req.params.id, {
