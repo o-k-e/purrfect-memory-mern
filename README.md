@@ -38,6 +38,7 @@ Players flip adorable kitty cards and try to find matching pairs, aiming to comp
 - 🏆 Live scoreboard to showcase top players
 - ✨ Smooth page navigation and simple animations
 - 📱 Responsive, mobile-friendly, and playful design
+- 🎵 For the best experience, make sure to play with sound enabled! 
 
 The main goal of this project was to learn and practice **MERN stack (MongoDB, Express.js, React, Node.js)** development, including routing, API calls, and integrating third-party services — all while creating an engaging and delightful user experience.
 
@@ -142,11 +143,11 @@ Follow these steps to set up and run the project locally:
       🔗 [http://localhost:3000](http://localhost:3000) (default Express port)
       
        
-5. **Access the Application**
+4. **Access the Application**
 
   Open your browser and visit: http://localhost:5173
 
-6. **Stop the Application**
+5. **Stop the Application**
 
 To stop the application:
 
@@ -155,6 +156,11 @@ To stop the application:
 
 
 ## Usage
+
+## Audio Experience 🎵
+
+For the best experience, make sure to play with sound enabled!  
+Each card flip and successful match comes with adorable cat sounds to make your game even more purrfect. 🐾🎶
 
 <img width="837" alt="welcome-page" src="https://github.com/user-attachments/assets/d1d3603f-ec93-47a3-a40e-cbe1fc73ed19" />
 
