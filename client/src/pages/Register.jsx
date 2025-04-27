@@ -51,7 +51,7 @@ function Register() {
 						type="text"
 						value={name}
 						onChange={(event) => setName(event.target.value)}
-						className="w-full p-2 mb-4 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-orange-400"
+						className="w-full p-2 mb-4 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-red-200"
 					/>
 
 					<label
@@ -66,13 +66,13 @@ function Register() {
 						type="password"
 						value={password}
 						onChange={(event) => setPassword(event.target.value)}
-						className="w-full p-2 mb-6 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-orange-400"
+						className="w-full p-2 mb-6 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-red-200"
 					/>
 
 					<div className="w-full flex flex-col items-center">
 						<button
 							type="submit"
-							className="w-full p-3 mb-4 bg-orange-400 text-white rounded hover:bg-orange-500 transition-colors"
+							className="w-full p-3 mb-4 bg-[#F0CDCC] text-white rounded hover:bg-red-200 hover:text-gray-700 transition-colors"
 						>
 							Register
 						</button>

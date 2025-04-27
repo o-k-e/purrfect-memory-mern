@@ -13,31 +13,27 @@ function Navlinks() {
 		<div className="flex items-center gap-4">
 			<button
 				onClick={playRandomMeow}
-				className="text-gray-700 px-4 py-2 rounded hover:bg-pink-300 transition-colors"
-				style={{ backgroundColor: '#F0CDCC' }}
+				className="text-gray-700 px-4 py-2 rounded bg-[#F0CDCC] hover:bg-red-200 border border-transparent hover:border-gray-800 transition-colors"
 			>
 				Meow
 			</button>
 			<Link to="/game">
 				<button
-					className="bg-pink-200 text-gray-700 px-4 py-2 rounded hover:bg-pink-300 transition-colors"
-					style={{ backgroundColor: '#F0CDCC' }}
+					className="text-gray-700 px-4 py-2 rounded bg-[#F0CDCC] hover:bg-red-200 border border-transparent hover:border-gray-800 transition-colors"
 				>
 					Play
 				</button>
 			</Link>
 			<Link to="/scoreboard">
 				<button
-					className="bg-pink-200 text-gray-700 px-4 py-2 rounded hover:bg-pink-300 transition-colors"
-					style={{ backgroundColor: '#F0CDCC' }}
+					className="text-gray-700 px-4 py-2 rounded bg-[#F0CDCC] hover:bg-red-200 border border-transparent hover:border-gray-800 transition-colors"
 				>
 					Scoreboard
 				</button>
 			</Link>
 			<Link to="/user-profile">
 				<button
-					className="bg-pink-200 text-gray-700 px-4 py-2 rounded hover:bg-pink-300 transition-colors"
-					style={{ backgroundColor: '#F0CDCC' }}
+					className="text-gray-700 px-4 py-2 rounded bg-[#F0CDCC] hover:bg-red-200 border border-transparent hover:border-gray-800 transition-colors"
 				>
 					User Profile
 				</button>

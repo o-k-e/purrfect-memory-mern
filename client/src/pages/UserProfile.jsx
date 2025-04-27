@@ -23,7 +23,6 @@ function UserProfile() {
 	}
 
 	async function handleDeleteAccount(id) {
-		/* console.log('Deleting user: ', id); */
 		alert(`Deleting your account... We are sorry to see you go, ${user.name}`);
 
 		const options = {
@@ -48,34 +47,30 @@ function UserProfile() {
 	}
 
 	return (
-		<div>
-			{user && (
-				<>
-					<Navbar />
-					<br />
-					<br />
-					<h2>User Profile</h2>
-					<br />
-					<p>{user.name}</p>
-					<p>Highest Score: {user.score}</p>
-					<br />
-					<br />
-					<Link to="/update-password">
-						<button type="button">Update Password</button>
-						<br />
-						<br />
-					</Link>
-					<button onClick={handleLogout}>Logout</button>
-					<br />
-					<br />
-					<button onClick={() => handleDeleteAccount(user._id)}>
-						Delete Account
-					</button>
-				</>
-			)}
-			{!user && <p>Loading...</p>}
+		<div className="min-h-screen flex flex-col items-center bg-gray-50">
+		  <Navbar />
+		  {user ? (
+			<div className="flex flex-col items-center mt-8">
+			  <h2 className="text-2xl font-bold mb-4">User Profile</h2>
+			  <p className="text-lg font-semibold">{user.name}</p>
+			  <p className="text-gray-600 mb-6">Highest Score: {user.score}</p>
+			  <Link to="/update-password">
+				<button className="px-6 py-2 mb-4 font-bold rounded bg-[#F0CDCC] hover:bg-red-200 border border-transparent hover:border-gray-800 transition">
+				  Update Password
+				</button>
+			  </Link>
+			  <button onClick={handleLogout} className="px-6 py-2 mb-4 font-bold rounded bg-[#F0CDCC] hover:bg-red-200 border border-transparent hover:border-gray-800 transition">
+				Logout
+			  </button>
+			  <button onClick={() => handleDeleteAccount(user._id)} className="px-6 py-2 font-bold rounded bg-[#F0CDCC] hover:bg-red-200 border border-transparent hover:border-gray-800 transition">
+				Delete Account
+			  </button>
+			</div>
+		  ) : (
+			<p className="mt-8 text-gray-500">Loading...</p>
+		  )}
 		</div>
-	);
+	  );
 }
 
 export default UserProfile;
