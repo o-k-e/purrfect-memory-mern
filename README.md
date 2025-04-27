@@ -1,1 +1,224 @@
-No starter code is provided. Start from scratch!
+<!-- PROJECT LOGO -->
+<br />
+<div align="center">
+  <a>
+<img width="190" alt="cat-logo" src="https://github.com/user-attachments/assets/3908da31-a852-4bbb-bf45-c670a678c08e" />
+  </a>
+<h1 align="center">Purrfect Memory Game</h1>
+</div>
+
+<!-- TABLE OF CONTENTS -->
+
+<details>
+  <summary>Table of Contents</summary>
+
+- [About The Project](#about-the-project)
+- [Built With](#built-with)
+- [Contributors](#contributors)
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation Steps](#installation-steps)
+  - [Access the Application](#access-the-application)
+  - [Stop the Application](#stop-the-application)
+- [Usage](#usage)
+- [Troubleshooting](#troubleshooting)
+
+</details>
+
+## About The Project
+
+Welcome to the **Purrfectly Pawsome Memory Game**! 🐾🐱
+
+This project is a fun and interactive memory game built with **MongoDB**, **Express.js**, and **Vite + React**, styled using **Tailwind CSS**, and written entirely in **JavaScript**.  
+Players flip adorable kitty cards and try to find matching pairs, aiming to complete the deck with the fewest moves possible.
+
+### Key Highlights:
+- 🎴 Randomly fetched cat images from **The Cat API**
+- 🔐 User authentication: login, register, and profile management
+- 🏆 Live scoreboard to showcase top players
+- ✨ Smooth page navigation and simple animations
+- 📱 Responsive, mobile-friendly, and playful design
+
+The main goal of this project was to learn and practice **MERN stack (MongoDB, Express.js, React, Node.js)** development, including routing, API calls, and integrating third-party services — all while creating an engaging and delightful user experience.
+
+Good luck, and may the purrs be ever in your favor! 😸
+
+<img width="841" alt="game-page" src="https://github.com/user-attachments/assets/b8c6ba17-c4ae-452d-a5d1-76cdc178a12c" />
+
+### Built With
+- Backend:   
+  [![Express][Express.js]][Express-url]
+  [![Node.js (v21.4.0)][Node.js]][Node.js-url]
+- Database:  
+  [![MongoDB][MongoDB]][MongoDB-url]
+- Frontend:  
+  [![React][React.js]][React-url]
+  [![Vite][Vite]][Vite-url]
+  ![CSS3][CSS3]
+  [![JavaScript][JavaScript]][JavaScript-url]
+  
+### Contributors:
+
+- **Oláhné Klár Erika**    
+    GitHub: https://github.com/o-k-e  
+- **Molnár Marianna**   
+    GitHub: https://github.com/MariannaMolnar  
+- **Szatyina Alexa**  
+    GitHub: https://github.com/szatyinalexa  
+
+
+<!-- GETTING STARTED -->
+## Getting Started
+
+To get a local copy up and running follow these simple example steps.
+
+### Prerequisites
+
+Before running the project, make sure you have the following installed:
+
+- **Node.js** (v21.4.0) – [Download here][Node.js-url]
+- **MongoDB Atlas account** – [Sign up here][MongoDB-url]
+
+---
+
+### Installation Steps
+
+Follow these steps to set up and run the project locally:
+
+1. **Clone the Repository**
+   Open a terminal and navigate to the directory where you would like to save the repository.
+    ```bash
+    https://github.com/o-k-e/purrfect-memory-mern.git
+    cd purrfect-memory-mern
+    ```
+
+3. **Configure Environment Variables**
+
+   Copy the example environment file and rename it to `.env` inside the server directory:
+
+    ```bash
+    cd server
+    cp .env.example .env
+    ```
+
+   Then open the newly created `.env` file and update the values to match your own credentials:
+
+   ```plaintext
+   DATABASE_URL="your_mongodb_connection_string"
+   ```
+
+3. **Running the Project**
+
+    Seed the database by running seed.js:
+    ```
+    cd server
+    node seed.js
+    ```
+
+    Start the backend server:
+    ````
+    cd server
+    npm run dev
+    ````
+
+    Start the frontend client:
+    ````
+    cd client
+    npm install
+    npm run dev
+    ````
+
+   These commands will:
+    - Populate the MongoDB database with initial seed data.
+    - Start the server.
+    - Start the Vite React frontend.
+
+    After completing the setup steps:
+    
+    - 🖥️ Your **frontend** will be available at:  
+      🔗 [http://localhost:5173](http://localhost:5173) (default Vite port)
+    
+    - 🛠️ Your **backend server** will be running at:  
+      🔗 [http://localhost:3000](http://localhost:3000) (default Express port)
+      
+       
+5. **Access the Application**
+
+  Open your browser and visit: http://localhost:5173
+
+6. **Stop the Application**
+
+To stop the application:
+
+- In the **backend** terminal window, press `CTRL + C`.
+- In the **frontend (client)** terminal window, press `CTRL + C`.
+
+
+## Usage
+
+<img width="837" alt="welcome-page" src="https://github.com/user-attachments/assets/d1d3603f-ec93-47a3-a40e-cbe1fc73ed19" />
+
+<img width="844" alt="login" src="https://github.com/user-attachments/assets/35e30d1c-bf43-470f-be68-f96285f0dc7f" />
+
+On the website, you can either:
+
+- 🔑 Log in with the default admin user credentials:  
+  **Username:** Maszatka  
+  **Password:** 1234
+
+or
+
+- 🆕 Register a new user, then log in with your own credentials.
+
+Once logged in:
+
+- 🏠 Visit the homepage at [http://localhost:5173](http://localhost:5173)
+- 🎴 Start a new game by clicking **Play**.
+- 🔄 Match all the kitty cards as quickly and accurately as possible.
+- 🏆 View the live **Scoreboard** to see the top players and your rank.
+- 🙍‍♂️ Manage your profile: update your password or delete your account if you wish.
+
+Enjoy the game and test your memory skills! 🐾✨
+
+  
+<img width="841" alt="game-page" src="https://github.com/user-attachments/assets/b8c6ba17-c4ae-452d-a5d1-76cdc178a12c" />
+
+<img width="842" alt="game-on" src="https://github.com/user-attachments/assets/95e043ff-18f9-413d-a2aa-2cdf920e6910" />
+  
+<img width="843" alt="scoreboard" src="https://github.com/user-attachments/assets/8baaf04d-9abf-477f-900c-452231f65a98" />
+
+<img width="846" alt="user-profile" src="https://github.com/user-attachments/assets/bf2340ce-941f-47ed-8a91-eabec9dc2ae0" />
+
+
+
+### Troubleshooting
+
+- Port Conflicts:
+  Ensure ports 3000 and 5173 are not in use by other processes.
+- MongoDB Connection Issues:
+  Ensure your MongoDB Atlas cluster allows connections from your IP (0.0.0.0/0 for all IPs).  
+  Verify that DATABASE_URL in .env is correct.
+
+<!-- BADGES -->
+
+[Express.js]: https://img.shields.io/badge/Express.js-404D59?style=for-the-badge
+[Express-url]: https://expressjs.com/
+
+[Node.js]: https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white
+[Node.js-url]: https://nodejs.org/
+
+[MongoDB]: https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white
+[MongoDB-url]: https://www.mongodb.com/
+
+[React.js]: https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black
+[React-url]: https://reactjs.org/
+
+[Vite]: https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white
+[Vite-url]: https://vitejs.dev/
+
+[CSS3]: https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white
+
+[JavaScript]: https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black
+[JavaScript-url]: https://developer.mozilla.org/en-US/docs/Web/JavaScript
+[CatAPI-url]: https://thecatapi.com/
+
