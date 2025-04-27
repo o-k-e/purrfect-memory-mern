@@ -23,7 +23,7 @@ function Welcome() {
 					{paw} {paw} {paw} {cat} {paw} {paw} {paw}
 				</h1>
 				<h2 className="text-2xl font-bold mb-6 text-center">
-					Welcome <span style={{ color: '#F0CDCC' }}>{user.toUpperCase()}</span>{' '}
+					Welcome <span className="text-[#F0CDCC]" >{user.toUpperCase()}</span>{' '}
 					to the Purrfectly Pawsome Memory Game! 🐾
 				</h2>
 
