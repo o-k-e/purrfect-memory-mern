@@ -32,8 +32,11 @@ function Register() {
 
 	return (
 		<>
-			<Logo />
-			<div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-8">
+			<div className="bg-[#FAEEEE] p-10">
+				<Logo />
+			</div>
+
+			<div className="flex flex-col items-center min-h-screen bg-[#FAEEEE] pt-30">
 				<h2 className="text-2xl font-bold mb-6">Register</h2>
 				<form
 					className="flex flex-col items-center border border-gray-300 p-6 rounded-lg bg-white w-full max-w-sm shadow-md"
@@ -72,7 +75,7 @@ function Register() {
 					<div className="w-full flex flex-col items-center">
 						<button
 							type="submit"
-							className="w-full p-3 mb-4 bg-[#F0CDCC] text-white rounded hover:bg-red-200 hover:text-gray-700 transition-colors"
+							className="w-full p-3 mb-4 bg-[#F0CDCC] text-white rounded hover:bg-red-200 hover:text-gray-800 border border-transparent hover:border-gray-800 transition-colors"
 						>
 							Register
 						</button>
