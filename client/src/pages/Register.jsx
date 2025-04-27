@@ -35,7 +35,7 @@ function Register() {
 				<Logo />
 			</div>
 
-			<div className="flex flex-col items-center min-h-screen bg-[#FAEEEE] pt-30">
+			<div className="flex flex-col items-center min-h-screen bg-[#FAEEEE] pt-10">
 				<h2 className="text-2xl font-bold mb-6">Register</h2>
 				<form
 					className="flex flex-col items-center border border-gray-300 p-6 rounded-lg bg-white w-full max-w-sm shadow-md"

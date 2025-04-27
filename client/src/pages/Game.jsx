@@ -108,7 +108,7 @@ function Game() {
 	return (
 		<div className="min-h-screen flex flex-col">
 			<Navbar />
-			<div className="flex flex-col items-center justify-center flex-grow p-8">
+			<div className="flex flex-col items-center justify-center flex-grow p-8 bg-gray-50">
 				{winner ? (
 					<h1 className="text-2xl font-semibold mb-8 text-center animate-bounce text-red-200">
 						<p className="pb-5">

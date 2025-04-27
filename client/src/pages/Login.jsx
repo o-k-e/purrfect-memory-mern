@@ -47,7 +47,7 @@ function Login() {
 				<Logo />
 			</div>
 
-			<div className="flex flex-col items-center min-h-screen pt-30 bg-[#FAEEEE]">
+			<div className="flex flex-col items-center min-h-screen pt-10 bg-[#FAEEEE]">
 				<h2 className="text-2xl font-bold mb-6">Login or Register</h2>
 				<form
 					className="flex flex-col items-center border border-gray-300 p-6 rounded-lg bg-white w-full max-w-sm shadow-md"

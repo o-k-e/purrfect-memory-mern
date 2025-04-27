@@ -26,8 +26,8 @@ function Scoreboard() {
 	return (
 		<>
 			<Navbar />
-			<div className="flex flex-col items-center justify-center mt-10">
-				<h1 className="text-3xl font-bold text-gray-700 mb-6">Scoreboard</h1>
+			<div className="flex flex-col items-center justify-center bg-gray-50 ">
+				<h1 className="text-3xl font-bold text-gray-700 py-10">Scoreboard</h1>
 				<div className="overflow-x-auto w-full max-w-4xl">
 					<table className="min-w-full bg-white shadow-md rounded-lg overflow-hidden">
 						<thead className="bg-[#F0CDCC]">
