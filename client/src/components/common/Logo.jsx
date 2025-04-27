@@ -3,7 +3,7 @@ import catlogo from '../../assets/images/cat-logo.png';
 
 function Logo() {
 	return (
-<div className="h-24 w-24 flex items-center justify-center">
+<div className="h-24 w-24 flex items-center justify-center ">
       <Link to="/welcome">
         <img src={catlogo} alt="cat logo" className="object-contain" />
       </Link>

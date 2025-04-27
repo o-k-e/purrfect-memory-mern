@@ -18,7 +18,7 @@ function Welcome() {
 	return (
 		<>
 			<Navbar />
-			<div className="flex flex-col items-center justify-center min-h-screen p-8">
+			<div className="flex flex-col items-center min-h-screen pt-30">
 				<h1 className="pb-10">
 					{paw} {paw} {paw} {cat} {paw} {paw} {paw}
 				</h1>
