@@ -1,13 +1,16 @@
-import Logo from "./Logo.jsx"
-import Nav from "./Nav.jsx"
+import Logo from './Logo.jsx';
+import Nav from './Nav.jsx';
 
 function Navbar() {
-  return (
-    <header className='navbar-header'>
-          <Logo/>
-          <Nav/>
-      </header>
-  )
+	return (
+		<header
+			className="bg-opacity-50 flex flex-wrap items-center justify-between w-full p-8 border-b border-gray-400 shadow-md"
+			style={{ backgroundColor: '#FAEEEE' }}
+		>
+			<Logo />
+			<Nav />
+		</header>
+	);
 }
 
 export default Navbar;

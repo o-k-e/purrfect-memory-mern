@@ -1,4 +1,4 @@
-form {
+/* form {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -30,7 +30,6 @@ form {
     max-width: 300px;
     padding: 10px;
     margin: 10px 0;
-    /* background-color: #4CAF50; */
     background-color: #e7995a;
     color: white;
     border: none;
@@ -39,7 +38,6 @@ form {
   }
   
   form button:hover {
-    /* background-color: #45a049; */
     background-color: #e78c41;
   }
   
@@ -70,4 +68,4 @@ form {
   }
 
 
-  
+   */
