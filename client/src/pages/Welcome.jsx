@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import Navbar from './Navbar.jsx';
+import Navbar from '../components/common/Navbar.jsx';
 
 function Welcome() {
 	const paw = '🐾';
@@ -23,8 +23,8 @@ function Welcome() {
 					{paw} {paw} {paw} {cat} {paw} {paw} {paw}
 				</h1>
 				<h2 className="text-2xl font-bold mb-6 text-center">
-					Welcome <span style={{ color: '#F0CDCC' }}>{user.toUpperCase()}</span> to the
-					Purrfectly Pawsome Memory Game! 🐾
+					Welcome <span style={{ color: '#F0CDCC' }}>{user.toUpperCase()}</span>{' '}
+					to the Purrfectly Pawsome Memory Game! 🐾
 				</h2>
 
 				<p className="text-lg mb-4 text-center max-w-2xl">

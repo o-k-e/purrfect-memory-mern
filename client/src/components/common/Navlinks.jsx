@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 
-import meows from './audio';
+import meows from '../../assets/audio/audio';
 
 function playRandomMeow() {
 	const randomNum = Math.floor(Math.random() * (meows.length - 0));
