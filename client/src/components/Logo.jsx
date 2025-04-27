@@ -1,11 +1,14 @@
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+import catlogo from '../images/catlogo.png';
 
 function Logo() {
-  return (
-    <div className='logo-container'>
-          <Link to={'/welcome'} className="logo-link-home"><div className="logo"><img src='../src/images/catlogo.png' alt='catlogo' /></div></Link>
-      </div>
-  )
+	return (
+		<div className="h-16 w-16 flex items-center">
+      <Link to="/welcome">
+        <img src={catlogo} alt="cat logo" className="h-16 w-16 object-contain" />
+      </Link>
+    </div>
+	);
 }
 
-export default Logo
+export default Logo;
