@@ -24,7 +24,7 @@ function Register() {
 			.then((user) => {
 				console.log(user);
 				localStorage.setItem('user', JSON.stringify(user));
-				navigate('/Welcome');
+				navigate('/login');
 			})
 
 			.catch((error) => console.error(error));
