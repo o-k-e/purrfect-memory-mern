@@ -3,7 +3,7 @@ import Card from '../components/game/Card.jsx';
 import Navbar from "../components/common/Navbar.jsx";
 import meows from '../assets/audio/audio.js';
 import purr from '../assets/audio/catpurr.mp3';
-import backofcard from '../assets/images/backofcard.jpg';
+import backofcard from '../assets/images/cat-deck.png';
 
 function Game() {
 	const imageUrl = backofcard;
