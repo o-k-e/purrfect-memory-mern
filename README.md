@@ -44,7 +44,7 @@ The main goal of this project was to learn and practice **MERN stack (MongoDB, E
 
 Good luck, and may the purrs be ever in your favor! 😸
 
-<img width="841" alt="game-page" src="https://github.com/user-attachments/assets/b8c6ba17-c4ae-452d-a5d1-76cdc178a12c" />
+<img width="635" alt="game-page" src="https://github.com/user-attachments/assets/1915af46-f9b9-4355-8182-e0019c19ef39" />
 
 ### Built With
 - Backend:   
@@ -162,9 +162,9 @@ To stop the application:
 For the best experience, make sure to play with sound enabled!  
 Each card flip and successful match comes with adorable cat sounds to make your game even more purrfect. 🐾🎶
 
-<img width="837" alt="welcome-page" src="https://github.com/user-attachments/assets/d1d3603f-ec93-47a3-a40e-cbe1fc73ed19" />
+<img width="635" alt="welcome-page" src="https://github.com/user-attachments/assets/d62faf14-d5a3-477b-91ab-cfae5c340754" />
 
-<img width="844" alt="login" src="https://github.com/user-attachments/assets/35e30d1c-bf43-470f-be68-f96285f0dc7f" />
+<img width="634" alt="login" src="https://github.com/user-attachments/assets/51064c19-daf8-4b9e-8c7c-ac07c558389f" />
 
 On the website, you can either:
 
@@ -186,15 +186,13 @@ Once logged in:
 
 Enjoy the game and test your memory skills! 🐾✨
 
-  
-<img width="841" alt="game-page" src="https://github.com/user-attachments/assets/b8c6ba17-c4ae-452d-a5d1-76cdc178a12c" />
+<img width="635" alt="game-page" src="https://github.com/user-attachments/assets/9d4ef27a-2814-4dd6-b641-f4ad61000ba7" />
 
-<img width="842" alt="game-on" src="https://github.com/user-attachments/assets/95e043ff-18f9-413d-a2aa-2cdf920e6910" />
-  
-<img width="843" alt="scoreboard" src="https://github.com/user-attachments/assets/8baaf04d-9abf-477f-900c-452231f65a98" />
+<img width="637" alt="game-on" src="https://github.com/user-attachments/assets/41bb2e80-f8f4-4744-a7ef-a4dce41d88e1" />
 
-<img width="846" alt="user-profile" src="https://github.com/user-attachments/assets/bf2340ce-941f-47ed-8a91-eabec9dc2ae0" />
+<img width="640" alt="scoreboard" src="https://github.com/user-attachments/assets/4b9faf3b-4e7f-46d6-afc2-51038c6140a5" />
 
+<img width="631" alt="user-profile" src="https://github.com/user-attachments/assets/e3c88995-c91f-4333-bbe0-ab777af74bf4" />
 
 
 ### Troubleshooting
