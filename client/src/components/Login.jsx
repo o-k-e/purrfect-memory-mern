@@ -38,39 +38,60 @@ function Login() {
     }
 
 	return (
-        <>
-        <Logo/>
-		<div className="login-container">
-			<h2>Login or Register</h2>
-			<form className="login-form" onSubmit={handleSubmit}>
-				<label htmlFor="username-login-input">Username {paw}</label>
-				<input
-					id="username-login-input"
-					name="username"
-					type="text"
-					value={name}
-					onChange={(event) => setName(event.target.value)}
-				></input>
-				<br />
-				<label htmlFor="password-login-input">Password {paw}</label>
-				<input
-					id="password-login-input"
-					name="password"
-					type="password"
-					value={password}
-					onChange={(event) => setPassword(event.target.value)}
-				></input>
-				<br />
-				<div>
-					<button type='submit'>Log in</button>
-					<p className='paragraph'>------------------ or ------------------</p>
-					<Link to="/register">
-						<button type='button'>Register</button>
-					</Link>
-				</div>
-			</form>
+		<>
+		<Logo />
+		<div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
+		  <h2 className="text-2xl font-bold mb-6">Login or Register</h2>
+		  <form
+			className="flex flex-col items-center border border-gray-300 p-6 rounded-lg bg-white w-full max-w-sm shadow-md"
+			onSubmit={handleSubmit}
+		  >
+			<label htmlFor="username-login-input" className="self-start mb-2 text-gray-700">
+			  Username {paw}
+			</label>
+			<input
+			  id="username-login-input"
+			  name="username"
+			  type="text"
+			  value={name}
+			  onChange={(event) => setName(event.target.value)}
+			  className="w-full p-2 mb-4 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-orange-400"
+			/>
+	
+			<label htmlFor="password-login-input" className="self-start mb-2 text-gray-700">
+			  Password {paw}
+			</label>
+			<input
+			  id="password-login-input"
+			  name="password"
+			  type="password"
+			  value={password}
+			  onChange={(event) => setPassword(event.target.value)}
+			  className="w-full p-2 mb-6 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-orange-400"
+			/>
+	
+			<div className="w-full flex flex-col items-center">
+			  <button
+				type="submit"
+				className="w-full p-3 mb-4 bg-orange-400 text-white rounded hover:bg-orange-500 transition-colors"
+			  >
+				Log in
+			  </button>
+	
+			  <p className="text-sm text-gray-500 my-2">------------------ or ------------------</p>
+	
+			  <Link to="/register" className="w-full">
+				<button
+				  type="button"
+				  className="w-full p-3 bg-gray-300 text-gray-700 rounded hover:bg-gray-400 transition-colors"
+				>
+				  Register
+				</button>
+			  </Link>
+			</div>
+		  </form>
 		</div>
-        </>
+	  </>
 	);
 }
 
