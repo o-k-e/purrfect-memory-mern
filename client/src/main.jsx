@@ -11,30 +11,31 @@ import UserProfile from './pages/UserProfile.jsx';
 import UpdatePassword from './pages/UpdatePassword.jsx';
 
 const router = createBrowserRouter([
-	{ path: '/game', element: <Game></Game> },
-	{
-		path: '/scoreboard',
-		element: <Scoreboard></Scoreboard>,
-	},
-	{
-		path: '/welcome',
-		element: <Welcome></Welcome>,
-	},
 	{
 		path: '/',
-		element: <Login></Login>,
+		element: <Welcome />,
+	},
+	{ path: '/game', 
+    element: <Game /> },
+	{
+		path: '/scoreboard',
+		element: <Scoreboard />,
+	},
+	{
+		path: '/login',
+		element: <Login />,
 	},
 	{
 		path: '/register',
-		element: <Register></Register>,
+		element: <Register />,
 	},
 	{
 		path: '/user-profile',
-		element: <UserProfile></UserProfile>,
+		element: <UserProfile />,
 	},
 	{
 		path: '/update-password',
-		element: <UpdatePassword></UpdatePassword>,
+		element: <UpdatePassword />,
 	},
 ]);
 

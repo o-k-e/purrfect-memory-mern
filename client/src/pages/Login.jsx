@@ -11,6 +11,11 @@ function Login() {
 	function handleSubmit(event) {
 		event.preventDefault();
 
+		if (!name.trim() || !password.trim()) {
+			alert('Please fill out both fields before logging in.');
+			return;
+		}
+
 		const data = { name, password };
 
 		const options = {
@@ -22,10 +27,11 @@ function Login() {
 		fetch('/api/user', options)
 			.then((response) => response.json())
 			.then((result) => {
+
 				if (result.success) {
 					console.log('Result on frontend: ', result.user);
 					localStorage.setItem('user', JSON.stringify(result.user));
-					navigate('/welcome');
+					navigate('/game');
 				} else {
 					console.log('Login failed:', result.message);
 					alert('Not a registered user. Please register.');
@@ -40,7 +46,7 @@ function Login() {
 			<div className="bg-[#FAEEEE] p-10">
 				<Logo />
 			</div>
-			
+
 			<div className="flex flex-col items-center min-h-screen pt-30 bg-[#FAEEEE]">
 				<h2 className="text-2xl font-bold mb-6">Login or Register</h2>
 				<form
@@ -89,12 +95,21 @@ function Login() {
 							------------------ or ------------------
 						</p>
 
-						<Link to="/register" className="w-full">
+						<Link to="/register" className="w-full pb-5">
 							<button
 								type="button"
 								className="w-full p-3 bg-gray-300 text-gray-700 rounded hover:bg-gray-400 transition-colors"
 							>
 								Register
+							</button>
+						</Link>
+
+						<Link to="/" className="w-full">
+							<button
+								type="button"
+								className="w-full p-3 bg-gray-200 text-gray-700 rounded hover:bg-gray-400 transition-colors"
+							>
+								Cancel
 							</button>
 						</Link>
 					</div>
