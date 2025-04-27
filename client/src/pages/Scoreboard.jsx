@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
-import UserScore from './UserScore.jsx';
-import Navbar from './Navbar.jsx';
+import UserScore from '../components/common/UserScore.jsx';
+import Navbar from '../components/common/Navbar.jsx';
 
 const FIRST_PLACE_MEDAL = '🥇';
 const SECOND_PLACE_MEDAL = '🥈';

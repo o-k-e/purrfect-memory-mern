@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import catlogo from '../images/cat-logo.png';
+import catlogo from '../../assets/images/cat-logo.png';
 
 function Logo() {
 	return (
