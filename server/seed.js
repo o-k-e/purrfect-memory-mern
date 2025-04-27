@@ -7,27 +7,27 @@ async function seedUsers() {
     await MemoUser.deleteMany();
     await MemoUser.create({
         name: "MasoMenos",
-        password: "",
+        password: "1234",
         score: 42
     });
     await MemoUser.create({
         name: "CathasTrophy",
-        password: "",
+        password: "1234",
         score: 21
     });
     await MemoUser.create({
         name: "Meowington",
-        password: "",
+        password: "1234",
         score: 420
     });
     await MemoUser.create({
         name: "Prüntyőke",
-        password: "",
+        password: "1234",
         score: 15
     });
     await MemoUser.create({
         name: "Maszatka",
-        password: "",
+        password: "1234",
         score: 9
     });
 }
