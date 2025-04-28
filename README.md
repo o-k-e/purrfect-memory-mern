@@ -167,7 +167,7 @@ Each card flip and successful match comes with adorable cat sounds to make your 
 
 On the website, you can either:
 
-- 🔑 Log in with the default admin user credentials:  
+- 🔑 Log in with the default user credentials:  
   **Username:** Maszatka  
   **Password:** 1234
 
