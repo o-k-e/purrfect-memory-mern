@@ -1,6 +1,7 @@
 import ReactDOM from 'react-dom/client';
 import './styles/index.css';
 import './styles/flip.css';
+import './styles/button.css';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Scoreboard from './pages/Scoreboard.jsx';
 import Welcome from './pages/Welcome.jsx';

@@ -1,76 +1,100 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import Navbar from '../components/common/Navbar.jsx';
+import Button from '../components/common/Button.jsx';
 
 function UpdatePassword() {
-	const [currentPassword, setCurrentPassword] = useState('');
-	const [newPassword, setNewPassword] = useState('');
+  const [currentPassword, setCurrentPassword] = useState('');
+  const [newPassword, setNewPassword] = useState('');
+  const navigate = useNavigate();
 
-	function handleUpdatePassword() {}
+  async function handleUpdatePassword(event) {
+    event.preventDefault();
 
-	return (
-		<>
-			<Navbar />
-			<div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-8">
-				<h3 className="text-2xl font-bold mb-6">Update Password</h3>
-				<form
-					className="flex flex-col items-center border border-gray-300 p-6 rounded-lg bg-white w-full max-w-sm shadow-md"
-					onSubmit={handleUpdatePassword}
-				>
-					<div className="w-full mb-4">
-						<label
-							htmlFor="password-current-input"
-							className="block text-gray-700 mb-2"
-						>
-							Current Password:
-						</label>
-						<input
-							id="password-current-input"
-							name="old-password"
-							type="password"
-							value={currentPassword}
-							onChange={(event) => setCurrentPassword(event.target.value)}
-							className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-orange-400"
-						/>
-					</div>
+    const loggedInUser = JSON.parse(localStorage.getItem('user'));
 
-					<div className="w-full mb-6">
-						<label
-							htmlFor="password-update-input"
-							className="block text-gray-700 mb-2"
-						>
-							New Password:
-						</label>
-						<input
-							id="password-update-input"
-							name="new-password"
-							type="password"
-							value={newPassword}
-							onChange={(event) => setNewPassword(event.target.value)}
-							className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-orange-400"
-						/>
-					</div>
+    if (!loggedInUser) {
+      alert('You must be logged in to update your password.');
+      navigate('/login');
+      return;
+    }
 
-					<button
-						type="submit"
-						className="w-full p-3 mb-4 bg-orange-400 text-white rounded hover:bg-orange-500 transition-colors"
-					>
-						Update Password
-					</button>
+    if (!currentPassword || !newPassword) {
+      alert('Please fill out both password fields.');
+      return;
+    }
 
-					<Link to="/user-profile" className="w-full">
-						<button
-							id="cancel-password-btn"
-							type="button"
-							className="w-full p-3 bg-gray-300 text-gray-700 rounded hover:bg-gray-400 transition-colors"
-						>
-							Cancel
-						</button>
-					</Link>
-				</form>
-			</div>
-		</>
-	);
+    if (currentPassword === newPassword) {
+      alert('New password must be different from the current password.');
+      return;
+    }
+
+    try {
+      const response = await fetch(`/api/user/${loggedInUser._id}`, {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ password: newPassword }),
+      });
+
+      if (response.ok) {
+        alert('Password updated successfully. Please log in again.');
+        localStorage.removeItem('user');
+        navigate('/login');
+      } else {
+        alert('Failed to update password. Please try again.');
+      }
+    } catch (error) {
+      console.error('Error updating password:', error);
+      alert('An error occurred. Please try again later.');
+    }
+  }
+
+  return (
+    <>
+      <Navbar />
+      <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-8">
+        <h3 className="text-2xl font-bold mb-6">Update Password</h3>
+        <form
+          className="flex flex-col items-center border border-gray-300 p-6 rounded-lg bg-white w-full max-w-sm shadow-md"
+          onSubmit={handleUpdatePassword}
+        >
+          <div className="w-full mb-4">
+            <label htmlFor="current-password" className="block text-gray-700 mb-2">
+              Current Password
+            </label>
+            <input
+              id="current-password"
+              type="password"
+              value={currentPassword}
+              onChange={(e) => setCurrentPassword(e.target.value)}
+              className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-red-300"
+              required
+            />
+          </div>
+
+          <div className="w-full mb-6">
+            <label htmlFor="new-password" className="block text-gray-700 mb-2">
+              New Password
+            </label>
+            <input
+              id="new-password"
+              type="password"
+              value={newPassword}
+              onChange={(e) => setNewPassword(e.target.value)}
+              className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-red-300"
+              required
+            />
+          </div>
+
+          <Button buttonText="Update Password" type="submit" className="btn btn-primary mb-4" />
+
+          <Link to="/user-profile" className="w-full">
+            <Button buttonText="Cancel" className="btn btn-secondary" />
+          </Link>
+        </form>
+      </div>
+    </>
+  );
 }
 
 export default UpdatePassword;

@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import Logo from '../components/common/Logo';
+import Button from '../components/common/Button';
 
 function Register() {
 	const [name, setName] = useState('');
@@ -10,6 +11,11 @@ function Register() {
 
 	function handleSubmit(event) {
 		event.preventDefault();
+
+		if (!name.trim() || !password.trim()) {
+			alert('Please fill out both fields before logging in.');
+			return;
+		}
 
 		const data = { name, password };
 
@@ -72,21 +78,18 @@ function Register() {
 					/>
 
 					<div className="w-full flex flex-col items-center">
-						<button
+						<Button
+							buttonText="Register"
 							type="submit"
-							className="w-full p-3 mb-4 bg-[#F0CDCC] text-white rounded hover:bg-red-200 hover:text-gray-800 border border-transparent hover:border-gray-800 transition-colors"
-						>
-							Register
-						</button>
+							className="btn-primary mb-4"
+						/>
 
 						<Link to="/" className="w-full">
-							<button
-								id="cancel-btn"
+							<Button
+								buttonText="Cancel"
 								type="button"
-								className="w-full p-3 bg-gray-300 text-gray-700 rounded hover:bg-gray-400 transition-colors"
-							>
-								Cancel
-							</button>
+								className="btn-secondary"
+							/>
 						</Link>
 					</div>
 				</form>

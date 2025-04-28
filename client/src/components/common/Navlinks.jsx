@@ -1,58 +1,47 @@
 import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import meows from '../../assets/audio/audio';
+import meows from '../../assets/audio/audio.js';
+import Button from './Button.jsx';
 
 function playRandomMeow() {
-  const randomNum = Math.floor(Math.random() * (meows.length - 0));
-  const randomMeow = meows[randomNum];
-  new Audio(randomMeow).play();
+	const randomIndex = Math.floor(Math.random() * meows.length);
+	const randomMeow = meows[randomIndex];
+	new Audio(randomMeow).play();
 }
 
 function Navlinks() {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+	const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-  useEffect(() => {
-    const loggedInUser = localStorage.getItem('user');
-    if (loggedInUser) {
-      setIsLoggedIn(true);
-    }
-  }, []);
+	useEffect(() => {
+		const loggedInUser = localStorage.getItem('user');
+		if (loggedInUser) {
+			setIsLoggedIn(true);
+		}
+	}, []);
 
-  if (!isLoggedIn) {
-    return null;
-  }
+	if (!isLoggedIn) {
+		return null;
+	}
 
-  return (
-    <div className="flex items-center gap-4">
-      <button
-        onClick={playRandomMeow}
-        className="text-gray-700 px-4 py-2 rounded bg-[#F0CDCC] hover:bg-red-200 border border-transparent hover:border-gray-800 transition-colors"
-      >
-        Meow
-      </button>
-      <Link to="/game">
-        <button
-          className="text-gray-700 px-4 py-2 rounded bg-[#F0CDCC] hover:bg-red-200 border border-transparent hover:border-gray-800 transition-colors"
-        >
-          Play
-        </button>
-      </Link>
-      <Link to="/scoreboard">
-        <button
-          className="text-gray-700 px-4 py-2 rounded bg-[#F0CDCC] hover:bg-red-200 border border-transparent hover:border-gray-800 transition-colors"
-        >
-          Scoreboard
-        </button>
-      </Link>
-      <Link to="/user-profile">
-        <button
-          className="text-gray-700 px-4 py-2 rounded bg-[#F0CDCC] hover:bg-red-200 border border-transparent hover:border-gray-800 transition-colors"
-        >
-          User Profile
-        </button>
-      </Link>
-    </div>
-  );
+	return (
+		<div className="flex items-center gap-4">
+			<Button
+				buttonText="Meow"
+				onClick={playRandomMeow}
+				className="btn-primary"
+			/>
+
+			<Link to="/game">
+				<Button buttonText="Play" className="btn-primary" />
+			</Link>
+			<Link to="/scoreboard">
+				<Button buttonText="Scoreboard" className="btn-primary" />
+			</Link>
+			<Link to="/user-profile">
+				<Button buttonText="User Profile" className="btn-primary" />
+			</Link>
+		</div>
+	);
 }
 
 export default Navlinks;
