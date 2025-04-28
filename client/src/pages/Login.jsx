@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import Logo from '../components/common/Logo';
+import Button from '../components/common/Button';
 
 function Login() {
 	const [name, setName] = useState('');
@@ -84,33 +85,30 @@ function Login() {
 					/>
 
 					<div className="w-full flex flex-col items-center">
-						<button
+						<Button
+							buttonText="Log in"
 							type="submit"
-							className="w-full p-3 mb-4 bg-[#F0CDCC] text-white rounded hover:bg-red-200 hover:text-gray-800 border border-transparent hover:border-gray-800 transition-colors"
-						>
-							Log in
-						</button>
+							className="btn-primary mb-4"
+						/>
 
 						<p className="text-sm text-gray-500 my-2">
 							------------------ or ------------------
 						</p>
 
 						<Link to="/register" className="w-full pb-5">
-							<button
+							<Button
+								buttonText="Register"
 								type="button"
-								className="w-full p-3 bg-gray-300 text-gray-700 rounded hover:bg-gray-400 transition-colors"
-							>
-								Register
-							</button>
+								className="btn-secondary"
+							/>
 						</Link>
 
 						<Link to="/" className="w-full">
-							<button
+							<Button
+								buttonText="Cancel"
 								type="button"
-								className="w-full p-3 bg-gray-200 text-gray-700 rounded hover:bg-gray-400 transition-colors"
-							>
-								Cancel
-							</button>
+								className="btn-secondary"
+							/>
 						</Link>
 					</div>
 				</form>

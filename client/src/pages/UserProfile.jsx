@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import Navbar from '../components/common/Navbar.jsx';
+import Button from '../components/common/Button.jsx';
 
 function UserProfile() {
 	const [user, setUser] = useState(null);
@@ -15,7 +16,7 @@ function UserProfile() {
 		} else {
 			navigate('/');
 		}
-	}, []);
+	}, [navigate]);
 
 	function handleLogout() {
 		localStorage.removeItem('user');
@@ -23,7 +24,13 @@ function UserProfile() {
 	}
 
 	async function handleDeleteAccount(id) {
-		alert(`Deleting your account... We are sorry to see you go, ${user.name}`);
+		if (!id) return;
+
+		const confirmed = window.confirm(
+			`Are you sure you want to delete your account, ${user?.name}?`
+		);
+
+		if (!confirmed) return;
 
 		const options = {
 			method: 'DELETE',
@@ -45,31 +52,43 @@ function UserProfile() {
 		}
 	}
 
+	if (!user) {
+		return (
+			<div className="min-h-screen flex flex-col items-center justify-center bg-gray-50">
+				<Navbar />
+				<p className="mt-8 text-gray-500">Loading user profile...</p>
+			</div>
+		);
+	}
+
 	return (
 		<div className="min-h-screen flex flex-col items-center bg-gray-50">
-		  <Navbar />
-		  {user ? (
+			<Navbar />
 			<div className="flex flex-col items-center mt-8">
-			  <h2 className="text-2xl font-bold mb-4">User Profile</h2>
-			  <p className="text-lg font-semibold">{user.name}</p>
-			  <p className="text-gray-600 mb-6">Highest Score: {user.score}</p>
-			  <Link to="/update-password">
-				<button className="px-6 py-2 mb-4 font-bold rounded bg-[#F0CDCC] hover:bg-red-200 border border-transparent hover:border-gray-800 transition">
-				  Update Password
-				</button>
-			  </Link>
-			  <button onClick={handleLogout} className="px-6 py-2 mb-4 font-bold rounded bg-[#F0CDCC] hover:bg-red-200 border border-transparent hover:border-gray-800 transition">
-				Logout
-			  </button>
-			  <button onClick={() => handleDeleteAccount(user._id)} className="px-6 py-2 font-bold rounded bg-[#F0CDCC] hover:bg-red-200 border border-transparent hover:border-gray-800 transition">
-				Delete Account
-			  </button>
+				<h2 className="text-2xl font-bold mb-4">User Profile</h2>
+				<p className="text-lg font-semibold">{user.name}</p>
+				<p className="text-gray-600 mb-6">Highest Score: {user.score}</p>
+
+				<div className="flex flex-col gap-4 w-full max-w-xs">
+					<Link to="/update-password">
+						<Button buttonText="Update Password" className="btn-primary" />
+					</Link>
+
+					<Button
+						buttonText="Logout"
+						className="btn-primary"
+						onClick={handleLogout}
+					/>
+
+					<Button
+						buttonText="Delete Account"
+						className="btn-secondary"
+						onClick={() => handleDeleteAccount(user._id)}
+					/>
+				</div>
 			</div>
-		  ) : (
-			<p className="mt-8 text-gray-500">Loading...</p>
-		  )}
 		</div>
-	  );
+	);
 }
 
 export default UserProfile;

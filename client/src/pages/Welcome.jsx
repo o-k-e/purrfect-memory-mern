@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import Logo from '../components/common/Logo.jsx';
+import Button from '../components/common/Button.jsx';
 
 function Welcome() {
 	const paw = '🐾';
@@ -46,15 +47,11 @@ function Welcome() {
 				</h1>
 				<div className="flex justify-center items-center gap-6 mt-8">
 					<Link to="/login" className="w-full max-w-xs">
-						<button className="w-full p-3 bg-[#F0CDCC] text-gray-700 rounded font-bold hover:bg-red-200 hover:text-gray-800 border border-transparent hover:border-gray-800 transition-colors">
-							Login
-						</button>
+						<Button buttonText="Login" className="btn-primary" />
 					</Link>
 
 					<Link to="/register" className="w-full max-w-xs">
-						<button className="w-full p-3 bg-[#F0CDCC] text-gray-700 rounded font-bold hover:bg-gray-400 transition-colors">
-							Register
-						</button>
+						<Button buttonText="Register" className="btn-primary" />
 					</Link>
 				</div>
 			</div>
