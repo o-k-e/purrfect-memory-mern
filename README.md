@@ -105,7 +105,7 @@ Follow these steps to set up and run the project locally:
    Then open the newly created `.env` file and update the values to match your own credentials:
 
    ```plaintext
-   DATABASE_URL="your_mongodb_connection_string"
+   DATABASE_URL="mongodb+srv://YOUR_USERNAM:YOUR_DB_PASSWORD@cluster0.vlwvb93.mongodb.net/"
    ```
 
 3. **Running the Project**
