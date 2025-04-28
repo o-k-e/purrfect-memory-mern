@@ -42,8 +42,6 @@ Players flip adorable kitty cards and try to find matching pairs, aiming to comp
 
 The main goal of this project was to learn and practice **MERN stack (MongoDB, Express.js, React, Node.js)** development, including routing, API calls, and integrating third-party services — all while creating an engaging and delightful user experience.
 
-Good luck, and may the purrs be ever in your favor! 😸
-
 <img width="635" alt="game-page" src="https://github.com/user-attachments/assets/1915af46-f9b9-4355-8182-e0019c19ef39" />
 
 ### Built With
