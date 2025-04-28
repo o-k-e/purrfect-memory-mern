@@ -1,0 +1,13 @@
+@import 'tailwindcss';
+
+.btn {
+	@apply w-full min-w-[130px] p-3 rounded font-bold transition-colors border border-transparent text-center;
+}
+
+.btn-primary {
+	@apply bg-[#F0CDCC] text-white hover:bg-red-200 hover:text-gray-800 hover:border-gray-800;
+}
+
+.btn-secondary {
+	@apply bg-gray-300 text-gray-700 hover:bg-gray-400;
+}
