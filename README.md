@@ -85,26 +85,26 @@ Before running the project, make sure you have the following installed:
 Follow these steps to set up and run the project locally:
 
 1. **Clone the Repository**
-   Open a terminal and navigate to the directory where you would like to save the repository.
-    ```bash
-    https://github.com/o-k-e/purrfect-memory-mern.git
-    cd purrfect-memory-mern
-    ```
+ Open a terminal and navigate to the directory where you would like to save the repository.
+  ```bash
+  https://github.com/o-k-e/purrfect-memory-mern.git
+  cd purrfect-memory-mern
+  ```
 
 3. **Configure Environment Variables**
 
-   Copy the example environment file and rename it to `.env` inside the server directory:
+ Copy the example environment file and rename it to `.env` inside the server directory:
 
-    ```bash
-    cd server
-    cp .env.example .env
-    ```
+  ```bash
+  cd server
+  cp .env.example .env
+  ```
 
-   Then open the newly created `.env` file and update the values to match your own credentials:
+ Then open the newly created `.env` file and update the values to match your own credentials:
 
-   ```plaintext
-   DATABASE_URL="mongodb+srv://YOUR_USERNAM:YOUR_DB_PASSWORD@cluster0.vlwvb93.mongodb.net/"
-   ```
+ ```plaintext
+ DATABASE_URL="mongodb+srv://YOUR_USERNAM:YOUR_DB_PASSWORD@cluster0.vlwvb93.mongodb.net/"
+ ```
 
 4. **Running the Project**
 
