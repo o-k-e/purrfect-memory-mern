@@ -106,46 +106,46 @@ Follow these steps to set up and run the project locally:
    DATABASE_URL="mongodb+srv://YOUR_USERNAM:YOUR_DB_PASSWORD@cluster0.vlwvb93.mongodb.net/"
    ```
 
-3. **Running the Project**
+4. **Running the Project**
 
-    Seed the database by running seed.js:
-    ```
-    cd server
-    node seed.js
-    ```
+  Seed the database by running seed.js:
+  ```
+  cd server
+  node seed.js
+  ```
 
-    Start the backend server:
-    ````
-    cd server
-    npm run dev
-    ````
+  Start the backend server:
+  ````
+  cd server
+  npm run dev
+  ````
 
-    Start the frontend client:
-    ````
-    cd client
-    npm install
-    npm run dev
-    ````
+  Start the frontend client:
+  ````
+  cd client
+  npm install
+  npm run dev
+  ````
 
-   These commands will:
-    - Populate the MongoDB database with initial seed data.
-    - Start the server.
-    - Start the Vite React frontend.
+ These commands will:
+  - Populate the MongoDB database with initial seed data.
+  - Start the server.
+  - Start the Vite React frontend.
 
-    After completing the setup steps:
+  After completing the setup steps:
+  
+  - 🖥️ Your **frontend** will be available at:  
+    🔗 [http://localhost:5173](http://localhost:5173) (default Vite port)
+  
+  - 🛠️ Your **backend server** will be running at:  
+    🔗 [http://localhost:3000](http://localhost:3000) (default Express port)
     
-    - 🖥️ Your **frontend** will be available at:  
-      🔗 [http://localhost:5173](http://localhost:5173) (default Vite port)
-    
-    - 🛠️ Your **backend server** will be running at:  
-      🔗 [http://localhost:3000](http://localhost:3000) (default Express port)
-      
        
-4. **Access the Application**
+5. **Access the Application**
 
   Open your browser and visit: http://localhost:5173
 
-5. **Stop the Application**
+6. **Stop the Application**
 
 To stop the application:
 
