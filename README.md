@@ -85,72 +85,67 @@ Before running the project, make sure you have the following installed:
 Follow these steps to set up and run the project locally:
 
 1. **Clone the Repository**
- Open a terminal and navigate to the directory where you would like to save the repository.
+  Open a terminal and navigate to the directory where you would like to save the repository.
   ```bash
   https://github.com/o-k-e/purrfect-memory-mern.git
   cd purrfect-memory-mern
   ```
 
-3. **Configure Environment Variables**
+2. **Configure Environment Variables**
 
- Copy the example environment file and rename it to `.env` inside the server directory:
-
+  Copy the example environment file and rename it to `.env` inside the server directory:
+  
   ```bash
   cd server
   cp .env.example .env
   ```
+  
+  Then open the newly created `.env` file and update the values to match your own credentials:
+  
+  ```plaintext
+  DATABASE_URL="mongodb+srv://YOUR_USERNAM:YOUR_DB_PASSWORD@cluster0.vlwvb93.mongodb.net/"
+  ```
 
- Then open the newly created `.env` file and update the values to match your own credentials:
+3. **Running the Project**
 
- ```plaintext
- DATABASE_URL="mongodb+srv://YOUR_USERNAM:YOUR_DB_PASSWORD@cluster0.vlwvb93.mongodb.net/"
- ```
-
-4. **Running the Project**
-
-  Seed the database by running seed.js:
+  Populate the MongoDB database with initial data by running seed.js:
   ```
   cd server
   node seed.js
   ```
-
+  
   Start the backend server:
   ````
   cd server
   npm run dev
   ````
-
+  
   Start the frontend client:
   ````
   cd client
   npm install
   npm run dev
   ````
-
- These commands will:
-  - Populate the MongoDB database with initial seed data.
-  - Start the server.
-  - Start the Vite React frontend.
-
+  
   After completing the setup steps:
   
   - 🖥️ Your **frontend** will be available at:  
-    🔗 [http://localhost:5173](http://localhost:5173) (default Vite port)
+  🔗 [http://localhost:5173](http://localhost:5173) (default Vite port)
   
   - 🛠️ Your **backend server** will be running at:  
-    🔗 [http://localhost:3000](http://localhost:3000) (default Express port)
-    
-       
-5. **Access the Application**
+  🔗 [http://localhost:3000](http://localhost:3000) (default Express port)
+  
+
+4. **Access the Application**
 
   Open your browser and visit: http://localhost:5173
 
-6. **Stop the Application**
+5. **Stop the Application**
 
-To stop the application:
-
-- In the **backend** terminal window, press `CTRL + C`.
-- In the **frontend (client)** terminal window, press `CTRL + C`.
+  To stop the application:
+  
+  - In the **backend** terminal window, press `CTRL + C`.
+  - In the **frontend (client)** terminal window, press `CTRL + C`.
 
 
 ## Usage
