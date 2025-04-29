@@ -34,10 +34,9 @@ Players flip adorable kitty cards and try to find matching pairs, aiming to comp
 
 ### Key Highlights:
 - 🎴 Randomly fetched cat images from **The Cat API**
-- 🔐 User authentication: login, register, and profile management
-- 🏆 Live scoreboard to showcase top players
+- 🔐 Basic User authentication: login, register, and profile management
+- 🏆 Scoreboard to showcase top players
 - ✨ Smooth page navigation and simple animations
-- 📱 Responsive, mobile-friendly, and playful design
 - 🎵 For the best experience, make sure to play with sound enabled! 
 
 The main goal of this project was to learn and practice **MERN stack (MongoDB, Express.js, React, Node.js)** development, including routing, API calls, and integrating third-party services — all while creating an engaging and delightful user experience.
