@@ -4,7 +4,7 @@
   <a>
 <img width="190" alt="cat-logo" src="https://github.com/user-attachments/assets/3908da31-a852-4bbb-bf45-c670a678c08e" />
   </a>
-<h1 align="center">Purrfect Memory Game</h1>
+<h1 align="center">Purrfect Memory Game 🐾</h1>
 </div>
 
 <!-- TABLE OF CONTENTS -->
@@ -27,17 +27,15 @@
 
 ## About The Project
 
-Welcome to the **Purrfectly Pawsome Memory Game**! 🐾🐱
-
 This project is a fun and interactive memory game built with **MongoDB**, **Express.js**, and **Vite + React**, styled using **Tailwind CSS**, and written entirely in **JavaScript**.  
 Players flip adorable kitty cards and try to find matching pairs, aiming to complete the deck with the fewest moves possible.
 
 ### Key Highlights:
-- 🎴 Randomly fetched cat images from **The Cat API**
-- 🔐 Basic User authentication: login, register, and profile management
-- 🏆 Scoreboard to showcase top players
-- ✨ Smooth page navigation and simple animations
-- 🎵 For the best experience, make sure to play with sound enabled! 
+-  Randomly fetched cat images from **The Cat API** 🐱
+-  Basic User authentication: login, register, and profile management
+-  Scoreboard to showcase top players
+-  Smooth page navigation and simple animations
+-  For the best experience, make sure to play with sound enabled! 🎵
 
 The main goal of this project was to learn and practice **MERN stack (MongoDB, Express.js, React, Node.js)** development, including routing, API calls, and integrating third-party services — all while creating an engaging and delightful user experience.
 
