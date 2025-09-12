@@ -4,6 +4,9 @@ import Navbar from '../components/common/Navbar.jsx';
 import Button from '../components/common/Button.jsx';
 
 function UpdatePassword() {
+
+  const api = import.meta.env.VITE_API_URL || '';
+  
   const [currentPassword, setCurrentPassword] = useState('');
   const [newPassword, setNewPassword] = useState('');
   const navigate = useNavigate();
@@ -30,7 +33,7 @@ function UpdatePassword() {
     }
 
     try {
-      const response = await fetch(`/api/user/${loggedInUser._id}`, {
+      const response = await fetch(`${api}/user/${loggedInUser._id}`, {
         method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ password: newPassword }),

@@ -4,6 +4,9 @@ import Logo from '../components/common/Logo';
 import Button from '../components/common/Button';
 
 function Register() {
+
+	const api = import.meta.env.VITE_API_URL || '';
+	
 	const [name, setName] = useState('');
 	const [password, setPassword] = useState('');
 	const navigate = useNavigate();
@@ -25,7 +28,7 @@ function Register() {
 			body: JSON.stringify(data),
 		};
 
-		fetch('/api/users', options)
+		fetch(`${api}/users`, options)
 			.then((response) => response.json())
 			.then((user) => {
 				localStorage.setItem('user', JSON.stringify(user));

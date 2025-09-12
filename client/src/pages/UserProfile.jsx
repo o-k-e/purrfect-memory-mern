@@ -4,6 +4,9 @@ import Navbar from '../components/common/Navbar.jsx';
 import Button from '../components/common/Button.jsx';
 
 function UserProfile() {
+
+	const api = import.meta.env.VITE_API_URL || '';
+	
 	const [user, setUser] = useState(null);
 	const navigate = useNavigate();
 
@@ -40,7 +43,7 @@ function UserProfile() {
 		};
 
 		try {
-			const response = await fetch(`/api/user/${id}`, options);
+			const response = await fetch(`${api}/user/${id}`, options);
 			if (response.ok) {
 				localStorage.removeItem('user');
 				navigate('/');
