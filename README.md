@@ -13,6 +13,7 @@
   <summary>Table of Contents</summary>
 
 - [About The Project](#about-the-project)
+- [🌐 Live Demo](#-live-demo)
 - [Built With](#built-with)
 - [Contributors](#contributors)
 - [Getting Started](#getting-started)
@@ -41,6 +42,16 @@ The main goal of this project was to learn and practice **MERN stack (MongoDB, E
 
 <img width="635" alt="game-page" src="https://github.com/user-attachments/assets/1915af46-f9b9-4355-8182-e0019c19ef39" />
 
+### 🌐 Live Demo
+
+The memory game is deployed on [Render.com](https://render.com) and accessible at the following link:
+
+[https://purrfect-memory-mern-i1yi.onrender.com](https://purrfect-memory-mern-i1yi.onrender.com)
+
+> **Note:**  
+> The first load may take **up to 30–60 seconds**, especially if the app hasn’t been accessed in a while.  
+> This delay is due to [Render's free tier](https://render.com/docs/free#spin-down), which **automatically spins down inactive services** to save resources. When you revisit the site, it needs to "wake up" the backend and frontend containers before responding.
+
 ### Built With
 - Backend:   
   [![Express][Express.js]][Express-url]
@@ -63,11 +74,11 @@ The main goal of this project was to learn and practice **MERN stack (MongoDB, E
     [![GitHub](https://img.shields.io/badge/GitHub-%2312100E.svg?style=for-the-badge&logo=github&logoColor=white)](https://github.com/szatyinalexa)   
   
 
-
-<!-- GETTING STARTED -->
 ## Getting Started
 
-To get a local copy up and running follow these simple example steps.
+If you just want to try the game without installing anything locally, check out the **[🌐 Live Demo](#-live-demo)** section above.  
+
+If you want to run the project locally and explore the code, follow these steps:
 
 ### Prerequisites
 
