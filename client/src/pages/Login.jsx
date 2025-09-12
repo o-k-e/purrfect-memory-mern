@@ -4,6 +4,9 @@ import Logo from '../components/common/Logo';
 import Button from '../components/common/Button';
 
 function Login() {
+
+	const api = import.meta.env.VITE_API_URL || '';
+	
 	const [name, setName] = useState('');
 	const [password, setPassword] = useState('');
 	const navigate = useNavigate();
@@ -25,7 +28,7 @@ function Login() {
 			body: JSON.stringify(data),
 		};
 
-		fetch('/api/user', options)
+		fetch(`${api}/user`, options)
 			.then((response) => response.json())
 			.then((result) => {
 				if (result.success) {

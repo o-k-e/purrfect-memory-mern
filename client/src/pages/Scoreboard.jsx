@@ -7,12 +7,15 @@ const SECOND_PLACE_MEDAL = '🥈';
 const THIRD_PLACE_MEDAL = '🥉';
 
 function Scoreboard() {
+
+  const api = import.meta.env.VITE_API_URL || '';
+  
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
     async function fetchUsers() {
       try {
-        const response = await fetch('/api/users/scored');
+        const response = await fetch(`${api}/users/scored`);
         const usersData = await response.json();
         setUsers(usersData);
       } catch (error) {
